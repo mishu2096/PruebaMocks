@@ -16,7 +16,7 @@ namespace PruebaMock
 
         public int Calcular (int examen)
         {
-            return Promedio + examen;
+            return Promedio + examen/2;
         }
 
 
