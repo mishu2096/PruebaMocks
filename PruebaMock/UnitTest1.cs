@@ -18,8 +18,9 @@ namespace PruebaMock
             notas.Pasa(puntuacion);
 
             Assert.IsTrue(notas.Sipaso);
-            puntuacion.AssertWasCalled(p => p.PorcentajeNota());
             puntuacion.AssertWasCalled(p => p.Calcular(notas.Examen));
+            puntuacion.AssertWasCalled(p => p.PorcentajeNota());
+            
 
         }
         [TestMethod]
@@ -29,14 +30,16 @@ namespace PruebaMock
             puntuacion.Stub(t => t.PorcentajeNota()).Return(0.7);
 
             puntuacion.Promedio = 80;
-            puntuacion.Calcular(70);
+            puntuacion.Calcular(90);
 
             var notas = new Notas();
             notas.Examen = 70;
             notas.Pasa(puntuacion);
+
             Assert.IsTrue(notas.Sipaso);
-            puntuacion.AssertWasCalled(p => p.PorcentajeNota());
             puntuacion.AssertWasCalled(p => p.Calcular(notas.Examen));
+            puntuacion.AssertWasCalled(p => p.PorcentajeNota());
+            
         }
 
         [TestMethod]
@@ -45,15 +48,16 @@ namespace PruebaMock
             var puntuacion = MockRepository.GenerateStub<IPuntuacion>();
             puntuacion.Stub(t => t.PorcentajeNota()).Return(0.7);
 
-            puntuacion.Promedio = 80;
-            puntuacion.Calcular(40);
+            puntuacion.Promedio = 40;
+            puntuacion.Calcular(80);
 
             var notas = new Notas();
             notas.Examen = 65;
             notas.Pasa(puntuacion);
             Assert.IsTrue(notas.Sipaso);
-            puntuacion.AssertWasCalled(p => p.PorcentajeNota());
             puntuacion.AssertWasCalled(p => p.Calcular(notas.Examen));
+            puntuacion.AssertWasCalled(p => p.PorcentajeNota());
+          
         }
     }
 }

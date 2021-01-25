@@ -52,7 +52,6 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IEstudiante.cs" />
     <Compile Include="IPuntuacion.cs" />
     <Compile Include="Notas.cs" />
     <Compile Include="Puntuacion.cs" />

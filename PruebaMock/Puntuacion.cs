@@ -22,7 +22,7 @@ namespace PruebaMock
 
         public double PorcentajeNota()
         {
-            return NotaTotal / Convert.ToDouble(Promedio);
+            return NotaTotal ;
         }
     }
 }
