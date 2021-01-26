@@ -1,28 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PruebaMock
+﻿namespace PruebaMock
 {
     public class Puntuacion : IPuntuacion
     {
         public Puntuacion()
         {
         }
-        public int Promedio { get; set; }
-        public int NotaTotal { get; set; }
-
-        public int Calcular (int examen)
+        public int Examen { get; internal set; }
+        public double NotaMinima()
         {
-            return Promedio + examen/2;
-        }
-
-
-        public double PorcentajeNota()
-        {
-            return NotaTotal ;
+            return Examen ;
         }
     }
 }

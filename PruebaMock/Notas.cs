@@ -14,17 +14,18 @@ namespace PruebaMock
 
         public int Examen { get; internal set; }
         public bool Sipaso { get; internal set; }
+        public bool Nopaso { get; internal set; }
 
         internal void Pasa(IPuntuacion puntuacion)
         {
-            if (puntuacion.PorcentajeNota() >=0.7)
+            if (Examen >=puntuacion.NotaMinima())
             {
-               puntuacion.Calcular(this.Examen);
+             
                 this.Sipaso = true;
             }
             else
             {
-                this.Sipaso = false;
+                this.Nopaso = false;
             }
 
         }
